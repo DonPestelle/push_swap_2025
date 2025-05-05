@@ -6,7 +6,7 @@
 /*   By: pestell2 <pestell2@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 16:03:59 by pestell2          #+#    #+#             */
-/*   Updated: 2025/02/19 16:42:49 by pestell2         ###   ########.fr       */
+/*   Updated: 2025/05/05 12:15:24 by pestell2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ size_t				ft_strlcat(char *dest, const char *src, size_t size);
 char				*ft_strdup(const char *s);
 size_t				ft_strlcpy(char *dst, const char *src, size_t size);
 void				*ft_calloc(size_t nmemb, size_t size);
-int					ft_atoi(const char *str);
+long long int		ft_atoi(const char *str);
 
 /*____________Functions 2____________*/
 char				*ft_substr(char const *s, unsigned int start, size_t len);
@@ -63,7 +63,6 @@ typedef struct s_list
 	struct s_list	*next;
 	struct s_list	*prev;
 }					t_list;
-
 
 /*____________Functions BONUS!____________*/
 t_list				*ft_lstnew(void *content);

@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   init_stack_a.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pestell2 <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/30 12:21:00 by pestell2          #+#    #+#             */
-/*   Updated: 2025/05/05 13:37:23 by pestell2         ###   ########.fr       */
+/*   Created: 2025/05/05 13:22:15 by pestell2          #+#    #+#             */
+/*   Updated: 2025/05/05 13:40:03 by pestell2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/push_swap.h"
+#include "../../inc/push_swap.h"
 
-int	main(int argc, char **argv)
+void	init_stack_a(t_stack **a, char *av)
 {
-	t_stack	*stack;
+	long	n;
 	int		i;
 
-	stack = NULL;
-	i = 1;
-	if (argc < 2)
-		return (1);
-	if (argc == 2)
-		argv = ft_split(argv[1], ' ');
-	init_stack_a(&stack, argv[i + 1]);
-	if (stack_sorted(stack))
-		ft_printf("stack is sorted!\n");
-	else
-		ft_printf("stack is not sorted\n");
-	free_stack(&stack);
-	return (0);
+	i = 0;
+	while (av[i])
+	{
+		if (error_syntax(av[i]))
+			free_errors(a);
+		n = ft_atoi(av[i]);
+		if (n > INT_MAX || n < INT_MIN)
+			free_errors(a);
+		if (error_dup(*a, (int)n))
+			free_errors(a);
+		append_node(a, (int)n);
+		i++;
+	}
 }

@@ -1,25 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_sorted.c                                     :+:      :+:    :+:   */
+/*   ft_node.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pestell2 <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/05 10:15:30 by pestell2          #+#    #+#             */
-/*   Updated: 2025/05/05 11:43:45 by pestell2         ###   ########.fr       */
+/*   Created: 2025/05/05 10:41:03 by pestell2          #+#    #+#             */
+/*   Updated: 2025/05/05 11:42:33 by pestell2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
-#include <stdio.h>
 
-int	stack_sorted(t_stack *stack)
+t_stack	*new_node(int num)
 {
-	while (stack && stack->next)
+	t_stack	*node;
+
+	node = malloc(sizeof(t_stack));
+	if (!node)
+		return (NULL);
+	node->num = num;
+	node->next = NULL;
+	return (node);
+}
+
+void	append_node(t_stack **stack, int num)
+{
+	t_stack	*new;
+	t_stack	*current;
+
+	new = new_node(num);
+	if (!*stack)
 	{
-		if (stack->num > stack->next->num)
-			return (0);
-		stack = stack->next;
+		*stack = new;
+		return ;
 	}
-	return (1);
+	current = *stack;
+	while (current->next)
+		current = current->next;
+	current->next = new;
 }

@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   free_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pestell2 <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/30 12:21:00 by pestell2          #+#    #+#             */
-/*   Updated: 2025/05/05 13:37:23 by pestell2         ###   ########.fr       */
+/*   Created: 2025/05/05 10:49:48 by pestell2          #+#    #+#             */
+/*   Updated: 2025/05/05 13:39:13 by pestell2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/push_swap.h"
+#include "../../inc/push_swap.h"
 
-int	main(int argc, char **argv)
+void	free_stack(t_stack **stack)
 {
-	t_stack	*stack;
-	int		i;
+	t_stack	*tmp;
 
-	stack = NULL;
-	i = 1;
-	if (argc < 2)
-		return (1);
-	if (argc == 2)
-		argv = ft_split(argv[1], ' ');
-	init_stack_a(&stack, argv[i + 1]);
-	if (stack_sorted(stack))
-		ft_printf("stack is sorted!\n");
-	else
-		ft_printf("stack is not sorted\n");
-	free_stack(&stack);
-	return (0);
+	if (!stack)
+		return ;
+	while (*stack)
+	{
+		tmp = *stack;
+		*stack = (*stack)->next;
+		free(tmp);
+	}
 }

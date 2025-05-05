@@ -6,7 +6,7 @@
 /*   By: pestell2 <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 13:17:50 by pestell2          #+#    #+#             */
-/*   Updated: 2025/05/02 15:43:03 by pestell2         ###   ########.fr       */
+/*   Updated: 2025/05/05 10:58:54 by pestell2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	swap(int *a, int *b)
 
 void	sort_three(t_stack arr[3])
 {
-	int temp;
+	int	temp;
 
 	if (arr[0].num > arr[1].num)
 	{

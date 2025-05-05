@@ -6,11 +6,11 @@
 /*   By: pestell2 <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 15:30:35 by pestell2          #+#    #+#             */
-/*   Updated: 2025/04/30 12:31:08 by pestell2         ###   ########.fr       */
+/*   Updated: 2025/05/05 11:22:01 by pestell2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../inc/push_swap.h"
 
 int	count_words(const char *str, char c)
 {

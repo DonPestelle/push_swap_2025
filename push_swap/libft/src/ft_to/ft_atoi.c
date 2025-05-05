@@ -6,16 +6,16 @@
 /*   By: pestell2 <pestell2@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 10:15:03 by pestell2          #+#    #+#             */
-/*   Updated: 2025/05/02 12:16:21 by pestell2         ###   ########.fr       */
+/*   Updated: 2025/05/05 12:15:49 by pestell2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/libft.h"
 
-int	ft_atoi(const char *str)
+long long int	ft_atoi(const char *str)
 {
-	int	res;
-	int	sign;
+	long long int	res;
+	int				sign;
 
 	res = 0;
 	sign = 1;

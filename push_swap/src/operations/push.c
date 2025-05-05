@@ -6,18 +6,17 @@
 /*   By: pestell2 <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 15:41:19 by pestell2          #+#    #+#             */
-/*   Updated: 2025/05/02 15:47:25 by pestell2         ###   ########.fr       */
+/*   Updated: 2025/05/05 11:48:15 by pestell2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/push_swap.h"
 
-
 void	pa(t_stack **a, t_stack **b)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
-	if (!*b)
+	if (!b || !(*b))
 		return ;
 	tmp = *b;
 	*b = (*b)->next;
@@ -28,9 +27,9 @@ void	pa(t_stack **a, t_stack **b)
 
 void	pb(t_stack **a, t_stack **b)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
-	if (!*a)
+	if (!a || !(*a))
 		return ;
 	tmp = *a;
 	*a = (*a)->next;
