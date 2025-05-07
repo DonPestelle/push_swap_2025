@@ -6,7 +6,7 @@
 /*   By: pestell2 <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 12:17:54 by pestell2          #+#    #+#             */
-/*   Updated: 2025/05/07 11:03:38 by pestell2         ###   ########.fr       */
+/*   Updated: 2025/05/07 12:38:40 by pestell2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,5 @@ void				init_stack_a(t_stack **a, char *av);
 t_stack				*new_node(int num);
 void				append_node(t_stack **stack, int num);
 // Algorithm
+void				sort_three(t_stack arr[3]);
 #endif
