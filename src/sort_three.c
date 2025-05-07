@@ -6,7 +6,7 @@
 /*   By: pestell2 <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 13:17:50 by pestell2          #+#    #+#             */
-/*   Updated: 2025/05/05 10:58:54 by pestell2         ###   ########.fr       */
+/*   Updated: 2025/05/07 13:48:04 by pestell2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,26 +21,27 @@ void	swap(int *a, int *b)
 	*b = temp;
 }
 
-void	sort_three(t_stack arr[3])
+void	sort_three(t_stack *stack)
 {
-	int	temp;
+	int a = stack->num;
+	int b = stack->next->num;
+	int c = stack->next->next->num;
 
-	if (arr[0].num > arr[1].num)
+	if (a > b && b < c && a < c)
+		sa(stack);
+	else if (a > b && b > c)
 	{
-		temp = arr[0].num;
-		arr[0].num = arr[1].num;
-		arr[1].num = temp;
+		sa(stack);
+		rra(stack);
 	}
-	if (arr[1].num > arr[2].num)
+	else if (a > b && b < c && a > c)
+		ra(stack);
+	else if (a < b && b > c && a < c)
 	{
-		temp = arr[1].num;
-		arr[1].num = arr[2].num;
-		arr[2].num = temp;
+		sa(stack);
+		ra(stack);
 	}
-	if (arr[0].num > arr[1].num)
-	{
-		temp = arr[0].num;
-		arr[0].num = arr[1].num;
-		arr[1].num = temp;
-	}
+	else if (a < b && b > c && a > c)
+		rra(stack);
 }
+

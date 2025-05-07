@@ -49,21 +49,6 @@ banner:
 	@echo "$(COLOUR_BLUE)        🚀💻 Sorting magic! 🚀💻   $(RESET)"
 	@echo ""
 
-# Unicode progress bar function
-
-define BLOCK_PROGRESS_BAR
-	COUNT=$$(cat .count 2>/dev/null || echo 0); \
-	COUNT=$$((COUNT + 1)); \
-	echo $$COUNT > .count; \
-	PERCENT=$$((100 * $$COUNT / $(TOTAL))); \
-	BLOCKS=$$((50 * $$COUNT / $(TOTAL))); \
-	BAR=""; \
-	for i in `seq 1 $$BLOCKS`; do BAR="$$BAR█"; done; \
-	while [ $${#BAR} -lt 50 ]; do BAR="$$BAR▒"; done; \
-	printf "\r$(COLOUR_GREEN)Compiling... [%-50s] %3s%%$(RESET)" "$$BAR" "$$PERCENT"; \
-	if [ $$COUNT -eq $(TOTAL) ]; then echo ""; fi
-endef
-
 
 # Ensure build directory exists
 $(OBJDIR):
@@ -83,9 +68,9 @@ $(OBJDIR)/%.o: %.c $(HEADER) Makefile | $(OBJDIR)
 	PERCENT=$$((100 * $$COUNT / $(TOTAL))); \
 	BLOCKS=$$((50 * $$COUNT / $(TOTAL))); \
 	BAR=""; \
-	for i in `seq 1 $$BLOCKS`; do BAR="$$BAR█"; done; \
-	while [ $${#BAR} -lt 50 ]; do BAR="$$BAR▒"; done; \
-	printf "\r$(COLOUR_GREEN)Compiling... |%-50s| %3d%%$(RESET)" "$$BAR" "$$PERCENT"; \
+	for i in `seq 1 $$BLOCKS`; do BAR="$$BAR▰"; done; \
+	while [ $${#BAR} -lt 50 ]; do BAR="$$BAR▱"; done; \
+	printf "\r$(COLOUR_GREEN)Compiling... [%-50s] %3d%%$(RESET)" "$$BAR" "$$PERCENT"; \
 	sleep 0.06;
 
 
@@ -107,9 +92,9 @@ clean:
 			PERCENT=$$((100 * $$CLEANED / $$FILES_TO_CLEAN)); \
 			BLOCKS=$$((50 * $$CLEANED / $$FILES_TO_CLEAN)); \
 			BAR=""; \
-			for i in `seq 1 $$BLOCKS`; do BAR="$$BAR█"; done; \
-			while [ $${#BAR} -lt 50 ]; do BAR="$$BAR▒"; done; \
-			printf "\r$(COLOUR_RED)Cleaning... |%-50s| %3s%%$(RESET)" "$$BAR" "$$PERCENT"; \
+			for i in `seq 1 $$BLOCKS`; do BAR="$$BAR▰"; done; \
+			while [ $${#BAR} -lt 50 ]; do BAR="$$BAR▱"; done; \
+			printf "\r$(COLOUR_RED)Cleaning... [%-50s] %3s%%$(RESET)" "$$BAR" "$$PERCENT"; \
 			sleep 0.06; \
 		done; \
 		printf "\n$(COLOUR_RED)Cleaning completed!$(RESET)\n"; \
