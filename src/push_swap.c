@@ -25,7 +25,7 @@ int	main(int argc, char **argv)
 		argv = ft_split(argv[1], ' ');
 	init_stack_a(&stack, argv[i + 1]);
 	if (!stack_sorted(stack))
-		ft_printf("stack not sorted!\n");
+		sort_three(stack);
 	free_stack(&stack);
 	return (0);
 }
