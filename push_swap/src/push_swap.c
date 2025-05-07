@@ -6,7 +6,7 @@
 /*   By: pestell2 <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 12:21:00 by pestell2          #+#    #+#             */
-/*   Updated: 2025/05/05 13:37:23 by pestell2         ###   ########.fr       */
+/*   Updated: 2025/05/07 11:31:05 by pestell2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,8 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 		argv = ft_split(argv[1], ' ');
 	init_stack_a(&stack, argv[i + 1]);
-	if (stack_sorted(stack))
-		ft_printf("stack is sorted!\n");
-	else
-		ft_printf("stack is not sorted\n");
+	if (!stack_sorted(stack))
+		ft_printf("stack not sorted!\n");
 	free_stack(&stack);
 	return (0);
 }

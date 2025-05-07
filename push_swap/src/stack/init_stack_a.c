@@ -6,7 +6,7 @@
 /*   By: pestell2 <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 13:22:15 by pestell2          #+#    #+#             */
-/*   Updated: 2025/05/05 13:40:03 by pestell2         ###   ########.fr       */
+/*   Updated: 2025/05/07 08:51:18 by pestell2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ void	init_stack_a(t_stack **a, char *av)
 	i = 0;
 	while (av[i])
 	{
-		if (error_syntax(av[i]))
+		if (error_syntax(&av[i]))
 			free_errors(a);
-		n = ft_atoi(av[i]);
+		n = ft_atoi(&av[i]);
 		if (n > INT_MAX || n < INT_MIN)
 			free_errors(a);
 		if (error_dup(*a, (int)n))

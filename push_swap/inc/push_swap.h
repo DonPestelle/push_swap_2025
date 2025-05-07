@@ -6,7 +6,7 @@
 /*   By: pestell2 <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 12:17:54 by pestell2          #+#    #+#             */
-/*   Updated: 2025/05/05 13:36:33 by pestell2         ###   ########.fr       */
+/*   Updated: 2025/05/07 11:03:38 by pestell2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int					error_syntax(char *str_n);
 // Operations
 // Stack
 int					stack_len(t_stack *stack);
-int					stack_sorted(t_stack *stack);
+bool				stack_sorted(t_stack *stack);
 void				free_stack(t_stack **stack);
 void				init_stack_a(t_stack **a, char *av);
 // Node
