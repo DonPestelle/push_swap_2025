@@ -6,7 +6,7 @@
 /*   By: pestell2 <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/24 15:07:35 by pestell2          #+#    #+#             */
-/*   Updated: 2025/05/05 10:01:36 by pestell2         ###   ########.fr       */
+/*   Updated: 2025/05/09 10:26:52 by pestell2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@ void	sa(t_stack *a)
 {
 	int	tmp;
 
-	a->size = stack_len(a);
-	if (a->size < 2)
+	if (!a || !a->next)
 		return ;
 	tmp = a->num;
 	a->num = a->next->num;
@@ -29,8 +28,7 @@ void	sb(t_stack *b)
 {
 	int	tmp;
 
-	b->size = stack_len(b);
-	if (b->size < 2)
+	if (!b || !b->next)
 		return ;
 	tmp = b->num;
 	b->num = b->next->num;

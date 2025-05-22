@@ -6,7 +6,7 @@
 /*   By: pestell2 <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 12:17:54 by pestell2          #+#    #+#             */
-/*   Updated: 2025/05/07 13:51:51 by pestell2         ###   ########.fr       */
+/*   Updated: 2025/05/22 14:11:44 by pestell2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,16 @@ int					stack_len(t_stack *stack);
 bool				stack_sorted(t_stack *stack);
 void				free_stack(t_stack **stack);
 void				init_stack_a(t_stack **a, char **av);
+int					count_max_bits(t_stack *a);
+void				normalize_stack(t_stack *a);
+
 // Node
 t_stack				*new_node(int num);
 void				append_node(t_stack **stack, int num);
 // Algorithm
 void				sort_three(t_stack *stack);
+void				radix_sort(t_stack **a, t_stack **b);
+int					find_min_index(t_stack *stack);
+void				sort_five(t_stack **a, t_stack **b);
+
 #endif
